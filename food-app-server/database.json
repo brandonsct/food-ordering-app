@@ -1,0 +1,22 @@
+{
+  "users": [
+    {
+      "email": "brandonbme@gmail.com",
+      "password": "abcd123"
+    },
+    {
+      "email": "Brandon@link.com",
+      "password": "guunun"
+    },
+    {
+      "email": "game@gamial.com",
+      "password": "wildone"
+    },
+    {
+      "email": "brandonbme1@gmail.com",
+      "password": "dsadsa",
+      "username": "asdasda",
+      "phone": "sadasdassa"
+    }
+  ]
+}
