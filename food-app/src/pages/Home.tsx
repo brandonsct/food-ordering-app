@@ -11,6 +11,7 @@ import { TfiShoppingCartFull } from "react-icons/tfi";
 import { CgProfile } from "react-icons/cg";
 import { useNavigate } from "react-router-dom";
 import NotificationBell from "../components/home/notificationBell"
+import BottomNav from "../components/home/BottomNav";
 const Home = () => {
     const [detailButton, setDetailButton] = useState(false)
     const [notification, setNotification] = useState(false)
@@ -19,7 +20,6 @@ const Home = () => {
         <div className="flex flex-col w-full h-full ">
 
             <section className="flex flex-row justify-between  w-full pt-4 pl-4 pr-4 top-0">
-
                 <div className="relative flex flex-row">
                     <div className="w-56 sm:w-56 md:w-96 sm:h-9 md:h-20 sm:text-lg md:text-2xl bg-red-200 rounded-2xl items-center flex justify-between ">
                         <span className="pl-4 " >Jl.kmkasmkxmas </span>
@@ -34,13 +34,9 @@ const Home = () => {
                             </div>
                         </div>
                         : <></>}
-
                 </div>
                 <NotificationBell notification={notification} setNotification={setNotification} />
-
             </section >
-
-
 
             <section>
                 <div className="flex flex-col pl-4">
@@ -55,41 +51,20 @@ const Home = () => {
                 </div >
             </section>
 
-            <section>
+            <section className="pb-4 bottom-0">
                 <div className="flex flex-row pl-3.5 pt-6 justify-between items-end pr-3.5 ">
                     <span className="text-2xl ">Today's promo</span>
                     <button className="text-red-400"> See all</button>
                 </div>
                 <div id="scroll-menu" className="pt-4 flex flex-row overflow-x-auto ">
-                    <FoodMenu />
-                    <FoodMenu />
-                    <FoodMenu />
+                    <FoodMenu imageUrl="chicken-masala.jpg" />
+                    {/* <FoodMenu />
+                    <FoodMenu /> */}
                     <div className="ml-4"></div>
                 </div>
-
             </section>
 
-            <div className="fixed bottom-0 left-0 z-50 w-full h-16 bg-black rounded-2xl ">
-                <div className="grid h-full max-w-lg grid-cols-4 mx-auto ">
-                    <button type="button" className="inline-flex flex-col items-center justify-center font-medium px-5 hover:bg-gray-50 dark:hover:bg-orange-600 active:text-white group dark:hover:rounded-l-2xl " >
-                        <BiHomeAlt2 className="text-orange-400" />
-
-                    </button>
-                    <button type="button" className="inline-flex flex-col items-center justify-center font-medium px-5 hover:bg-gray-50 dark:hover:bg-orange-600  " >
-
-                        <TfiShoppingCartFull className="text-orange-400 " />
-                    </button>
-                    <button type="button" className="inline-flex flex-col items-center justify-center font-medium px-5 hover:bg-gray-50 dark:hover:bg-orange-600 group">
-
-                        <FaMagnifyingGlass className="text-orange-400" />
-                    </button>
-                    <button type="button" className="inline-flex flex-col items-center justify-center font-medium px-5 hover:bg-gray-50 dark:hover:bg-orange-600 group  dark:hover:rounded-r-2xl">
-
-                        <CgProfile className="text-orange-400" />
-                    </button>
-
-                </div>
-            </div>
+            <BottomNav />
 
         </div >
     )

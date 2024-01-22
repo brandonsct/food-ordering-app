@@ -1,11 +1,28 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { FaHeart, FaRegHeart } from 'react-icons/fa6'
+// import chickenMasala from '../../assets/chicken-masala.jpg';
 
-const FoodMenu = () => {
+
+
+type FoodMenuProps = {
+    imageUrl: string
+}
+const FoodMenu: React.FC<FoodMenuProps> = ({ imageUrl }) => {
     const [favDish, setFavDish] = useState(false)
+    const [bgImage, setBgImage] = useState('');
+
+    useEffect(() => {
+
+        import( /* @vite-ignore */
+            `../../assets/${imageUrl}`)
+            .then(image => {
+                setBgImage(image.default);
+            });
+        console.log("this is image", bgImage)
+    }, [imageUrl]);
 
     return (
-        <div className=' bg-cover bg-center bg-chicken-masala h-80 w-72 rounded-xl ml-3.5'    >
+        <div className=' bg-cover bg-center h-80 w-72 rounded-xl ml-3.5' style={{ backgroundImage: `url(${bgImage})` }} >
             <div className='flex justify-end p-2 '>
                 <button className='bg-white h-9 w-9 rounded-full flex justify-center items-center '
                     onClick={() => setFavDish(!favDish)}>
