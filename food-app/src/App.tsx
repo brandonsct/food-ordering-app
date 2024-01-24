@@ -9,9 +9,11 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import SignUp from './pages/SignUp'
 import Home from './pages/Home'
 import Favourite from './pages/Favourite'
+import Profile from './pages/Profile'
+import usePreventZoom from './components/PreventZoom'
 
 function App() {
-
+  // usePreventZoom();
   return (
     <div>
 
@@ -22,6 +24,7 @@ function App() {
           <Route path="/SignUp" element={<SignUp />} />
           <Route path="/Fav" element={<Favourite />} />
           <Route path="/Search" element={<Search />} />
+          <Route path="/Profile" element={<Profile />} />
 
         </Routes>
       </BrowserRouter>

@@ -33,7 +33,7 @@ const Search = () => {
             <section >
                 <Searchbar setFilter={setFilter} filter={filter} />
             </section>
-            {filter ? <div className='flex flex-row justify-around mt-2'>
+            {filter ? <div className='flex flex-row justify-around pt-2'>
                 <FilterTag tagName='Breakfast' tagState={breakfastTag} stateToggle={setBreakfastTag} />
                 <FilterTag tagName='Lunch' tagState={lunchTag} stateToggle={setLunchTag} />
                 <FilterTag tagName='Dinner' tagState={dinnerTag} stateToggle={setDinnerTag} />
@@ -50,10 +50,10 @@ const Search = () => {
                     </section>
 
                     :
-                    <div>
+                    <div className='w-full h-auto'>
                         <div>
                             <div className='flex flex-row justify-between'>
-                                <div className='ml-[23px]'>Most Frequent Order</div>
+                                <div className='pl-[23px]'>Most Frequent Order</div>
                                 <div> See all</div>
                             </div>
 
@@ -70,23 +70,16 @@ const Search = () => {
                         </div>
                         <div>
                             <div className='ml-[23px]'>Daily Suggestion</div>
+                            {/* <div className='w-screen  ml-[23px]'> */}
                             <div className='w-screen  ml-[23px]'>
+
                                 <FoodmenueHorizontal imageUrl="chicken-masala" />
                                 <FoodmenueHorizontal imageUrl="chicken-masala" />
                             </div>
                         </div>
 
                     </div>
-
-
-
-
             }
-
-
-
-
-
             <BottomNav />
 
         </div>

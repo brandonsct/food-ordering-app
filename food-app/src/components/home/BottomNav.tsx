@@ -20,7 +20,7 @@ const BottomNav = () => {
 
                     <FaMagnifyingGlass className="text-orange-400" />
                 </button>
-                <button type="button" className="inline-flex flex-col items-center justify-center font-medium px-5 hover:bg-gray-50 dark:hover:bg-orange-600 group  dark:hover:rounded-r-2xl">
+                <button type="button" onClick={() => navigate('/Profile')} className="inline-flex flex-col items-center justify-center font-medium px-5 hover:bg-gray-50 dark:hover:bg-orange-600 group  dark:hover:rounded-r-2xl">
 
                     <CgProfile className="text-orange-400" />
                 </button>
