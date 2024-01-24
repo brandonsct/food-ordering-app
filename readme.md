@@ -1,4 +1,8 @@
-<h1 align="center">Food delivery App </h1>
+<h1 align="center">Food delivery App 
+ </h1>
+
+<p>A current working project 
+ </p>
 
 <img src="./img/landingPage.png">
 This project is the mobile app interface of a simple food delivery system.
