@@ -12,14 +12,21 @@ const FoodMenu: React.FC<FoodMenuProps> = ({ imageUrl }) => {
     const [bgImage, setBgImage] = useState('');
 
     useEffect(() => {
-
-        import( /* @vite-ignore */
-            `../../assets/${imageUrl}`)
+        console.log("imageUrl", imageUrl)
+        import(`../../assets/${imageUrl}.jpg`)
             .then(image => {
+                console.log('here first')
                 setBgImage(image.default);
+                console.log("Image loaded", image.default); // Log when the image is loaded
+
             });
-        console.log("this is image", bgImage)
+
     }, [imageUrl]);
+
+    useEffect(() => {
+
+        console.log("this is image", bgImage)
+    }, [bgImage])
 
     return (
         <div className=' bg-cover bg-center h-80 w-72 rounded-xl ml-3.5' style={{ backgroundImage: `url(${bgImage})` }} >

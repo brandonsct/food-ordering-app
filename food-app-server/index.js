@@ -5,7 +5,7 @@ import jwt from "jsonwebtoken";
 import low from "lowdb";
 import FileSync from "lowdb/adapters/FileSync.js";
 
-var adapter = new FileSync("./database.json");
+var adapter = new FileSync("./userDb.json");
 var db = low(adapter);
 
 // Initialize Express app

@@ -57,9 +57,10 @@ const Home = () => {
                     <button className="text-red-400"> See all</button>
                 </div>
                 <div id="scroll-menu" className="pt-4 flex flex-row overflow-x-auto ">
-                    <FoodMenu imageUrl="chicken-masala.jpg" />
-                    {/* <FoodMenu />
-                    <FoodMenu /> */}
+                    <FoodMenu imageUrl="chicken-masala" />
+                    <FoodMenu imageUrl="chicken-masala" />
+                    <FoodMenu imageUrl="chicken-masala" />
+
                     <div className="ml-4"></div>
                 </div>
             </section>

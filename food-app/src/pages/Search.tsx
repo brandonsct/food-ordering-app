@@ -1,5 +1,5 @@
 
-import { CiSearch } from 'react-icons/ci'
+
 import { SlArrowLeft } from 'react-icons/sl'
 import Searchbar from '../components/search/Searchbar'
 import FoodmenueHorizontal from '../components/search/FoodmenueHorizontal'
@@ -11,11 +11,13 @@ import { useNavigate } from 'react-router-dom'
 
 
 const Search = () => {
-    const [filter, setFilter] = useState(true)
+    const [filter, setFilter] = useState(false)
     const [breakfastTag, setBreakfastTag] = useState(false)
     const [lunchTag, setLunchTag] = useState(false)
     const [dinnerTag, setDinnerTag] = useState(false)
     const navigate = useNavigate()
+
+
     return (
         <div className='h-screen w-screen'>
             <section className='grid grid-cols-3 gap-4  w-full h-14'>
@@ -41,39 +43,43 @@ const Search = () => {
             </div> : <></>}
             {
                 filter ?
+                    <section className='w-screen h-auto flex flex-col justify-center items-center '>
+                        <FoodmenueHorizontal imageUrl="chicken-masala" />
+                        <FoodmenueHorizontal imageUrl="chicken-masala" />
+                        <FoodmenueHorizontal imageUrl="chicken-masala" />
+                    </section>
+
+                    :
                     <div>
                         <div>
-                            <div>Most Frequent Order</div>
-                            <div className='w-screen flex-row flex  overflow-x-auto '>
-                                <SmallCard />
-                                <SmallCard />
-                                <SmallCard />
-                                <SmallCard />
-                                <SmallCard />
-                                <SmallCard />
-                                <SmallCard />
-                                <SmallCard />
-                                <SmallCard />
-                                <SmallCard />
+                            <div className='flex flex-row justify-between'>
+                                <div className='ml-[23px]'>Most Frequent Order</div>
+                                <div> See all</div>
+                            </div>
+
+
+                            <div className='w-screen flex-row flex  overflow-x-auto  ml-[23px]'>
+
+                                <SmallCard imageUrl="chicken-masala" />
+                                <SmallCard imageUrl="chicken-masala" />
+                                <SmallCard imageUrl="chicken-masala" />
+                                <SmallCard imageUrl="chicken-masala" />
+                                <SmallCard imageUrl="chicken-masala" />
                             </div>
 
                         </div>
                         <div>
-                            <div>Daily Suggestion</div>
-                            <FoodmenueHorizontal />
-                            <FoodmenueHorizontal />
+                            <div className='ml-[23px]'>Daily Suggestion</div>
+                            <div className='w-screen  ml-[23px]'>
+                                <FoodmenueHorizontal imageUrl="chicken-masala" />
+                                <FoodmenueHorizontal imageUrl="chicken-masala" />
+                            </div>
                         </div>
 
-                    </div> :
+                    </div>
 
 
-                    <section className='w-screen h-auto flex flex-col justify-center items-center '>
-                        <FoodmenueHorizontal />
-                        <FoodmenueHorizontal />
-                        <FoodmenueHorizontal />
 
-
-                    </section>
 
             }
 

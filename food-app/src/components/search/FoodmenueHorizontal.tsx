@@ -1,10 +1,29 @@
+import { useEffect, useState } from "react"
 import { FaArrowRightLong } from "react-icons/fa6"
 
+interface FoodmenueHorizontalProps {
+    imageUrl: string
+}
+const FoodmenueHorizontal: React.FC<FoodmenueHorizontalProps> = ({ imageUrl }) => {
+    const [bgImage, setBgImage] = useState('')
+    useEffect(() => {
+        import(`../../assets/${imageUrl}.jpg`)
+            .then(image => {
+                setBgImage(image.default);
 
-const FoodmenueHorizontal = () => {
+            });
+
+    }, [imageUrl]);
     return (
         <div className='flex flex-row  w-[328px] h-[103px] bg-gray-300 p-2 m-2 rounded-[15px]'>
-            <div className='w-[100px] h-[87px] bg-red-400 rounded-[15px]'>
+            <div className='w-[100px] h-[87px] bg-red-400 rounded-[15px] ' style={{
+                backgroundImage: `url(${bgImage})`,
+                backgroundSize: 'cover', // or 'contain'
+                backgroundPosition: 'center',
+                backgroundRepeat: 'no-repeat'
+            }}
+
+            >
             </div>
             <div className='flex flex-col ml-[14px]'>
                 <span>Chicken Masala</span>
