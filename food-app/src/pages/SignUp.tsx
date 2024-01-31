@@ -109,7 +109,7 @@ const SignUp = () => {
             </span>
             <div className=' pt-4 text-base text-center'
 
-            >Already have an account? <a className='text-c4-gray' href='/Login' >Login</a></div>
+            >Already have an account? <a className='text-c4-gray' href='/' >Login</a></div>
         </div >
     )
 }
