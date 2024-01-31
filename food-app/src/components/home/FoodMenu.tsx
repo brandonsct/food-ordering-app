@@ -10,7 +10,7 @@ type FoodMenuProps = {
 const FoodMenu: React.FC<FoodMenuProps> = ({ imageUrl }) => {
     const [favDish, setFavDish] = useState(false)
     const [bgImage, setBgImage] = useState('');
-
+    const [popUp, setPopUp] = useState(false)
     useEffect(() => {
         console.log("imageUrl", imageUrl)
         import(`../../assets/${imageUrl}.jpg`)
@@ -28,6 +28,8 @@ const FoodMenu: React.FC<FoodMenuProps> = ({ imageUrl }) => {
         console.log("this is image", bgImage)
     }, [bgImage])
 
+
+
     return (
         <div className=' bg-cover bg-center h-80 w-72 rounded-xl ml-3.5' style={{ backgroundImage: `url(${bgImage})` }} >
             <div className='flex justify-end p-2 '>
@@ -38,7 +40,7 @@ const FoodMenu: React.FC<FoodMenuProps> = ({ imageUrl }) => {
                 </button>
 
             </div>
-            <div className='flex flex-col justify-center items-center'>
+            <div className='flex flex-col justify-center items-center' onClick={() => setPopUp(true)}>
                 <div className='bg-white w-64 h-auto mt-36 rounded-md ml-4 mr-4'>
                     <div className=' flex flex-col pt-4 pl-4 pb-4 pr-4'>
                         <span className=''>Chicken Masala</span>

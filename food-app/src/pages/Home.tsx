@@ -1,5 +1,5 @@
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { SlArrowDown, SlArrowUp } from "react-icons/sl";
 import SquareButton from "../components/home/SquareButton";
 import { IoPricetagsOutline } from "react-icons/io5";
@@ -16,6 +16,25 @@ const Home = () => {
     const [detailButton, setDetailButton] = useState(false)
     const [notification, setNotification] = useState(false)
     const navigate = useNavigate();
+
+    const [showPopup, setShowPopup] = useState([false, false, false]);
+    const handleClick = (id: string) => {
+        setShowPopup(prevShowPopup => ({ ...prevShowPopup, [id]: !prevShowPopup[id] }));
+    };
+    const [menuItems, setMenuItems] = useState<string[]>([]);
+    useEffect(() => {
+        // Fetch menu items from the backend
+        // This is just a placeholder, replace it with your actual fetch logic
+        // fetch('/api/menu-items')
+        //     .then(response => response.json())
+        //     .then(data => setMenuItems(data));
+        let data = ['chicken-masala', 'chicken-masala', 'chicken-masala']
+        setMenuItems(data)
+    }, []);
+
+
+
+
     return (
         <div className="flex flex-col w-full h-full ">
 
@@ -57,11 +76,22 @@ const Home = () => {
                     <button className="text-red-400"> See all</button>
                 </div>
                 <div id="scroll-menu" className="pt-4 flex flex-row overflow-x-auto ">
-                    <FoodMenu imageUrl="chicken-masala" />
-                    <FoodMenu imageUrl="chicken-masala" />
-                    <FoodMenu imageUrl="chicken-masala" />
+                    {menuItems.map((menuItem) => (
+                        <div key={menuItem.id}>
+                            <FoodMenu imageUrl={menuItem.imageUrl} onClick={() => handleClick(menuItem.id)} />
 
-                    <div className="ml-4"></div>
+                            {showPopup[menuItem.id] && (
+                                <div>
+                                    {/* Your popup menu code here */}
+                                </div>
+                            )}
+                        </div>
+                    ))}
+                    {/* <FoodMenu imageUrl="chicken-masala" />
+                    <FoodMenu imageUrl="chicken-masala" />
+                    <FoodMenu imageUrl="chicken-masala" /> */}
+
+
                 </div>
             </section>
 

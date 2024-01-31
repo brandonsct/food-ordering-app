@@ -10,7 +10,8 @@ import SignUp from './pages/SignUp'
 import Home from './pages/Home'
 import Favourite from './pages/Favourite'
 import Profile from './pages/Profile'
-import usePreventZoom from './components/PreventZoom'
+
+import PopUpMenue from './components/search/popUpMenue'
 
 function App() {
   // usePreventZoom();
@@ -25,6 +26,8 @@ function App() {
           <Route path="/Fav" element={<Favourite />} />
           <Route path="/Search" element={<Search />} />
           <Route path="/Profile" element={<Profile />} />
+          <Route path="/PopUp" element={<PopUpMenue />} />
+
 
         </Routes>
       </BrowserRouter>
