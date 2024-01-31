@@ -10,7 +10,7 @@ const BottomNav = () => {
     return (
         <div className="fixed bottom-0 left-0 z-50 w-full h-16 bg-black rounded-2xl ">
             <div className="grid h-full max-w-lg grid-cols-4 mx-auto ">
-                <button type="button" onClick={() => navigate('/')} className="inline-flex flex-col items-center justify-center font-medium px-5 hover:bg-gray-50 dark:hover:bg-orange-600 active:text-white group dark:hover:rounded-l-2xl " >
+                <button type="button" onClick={() => navigate('/Home')} className="inline-flex flex-col items-center justify-center font-medium px-5 hover:bg-gray-50 dark:hover:bg-orange-600 active:text-white group dark:hover:rounded-l-2xl " >
                     <BiHomeAlt2 className="text-orange-400" />
                 </button>
                 <button type="button" className="inline-flex flex-col items-center justify-center font-medium px-5 hover:bg-gray-50 dark:hover:bg-orange-600  " >

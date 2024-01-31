@@ -69,7 +69,7 @@ const Login = () => {
             .then((res) => res.json())
             .then((data) => {
                 if (data.accountExist) {
-                    navigate('/')
+                    navigate('/Home')
                 }
                 else {
                     console.log("incorrect password")
